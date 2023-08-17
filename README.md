@@ -1,4 +1,7 @@
 ![Logo](LOGO.png)
+
+Kyoshin is not a complete web framework.
+
 If tailwind is a car, Kyoshin is a steering wheel that forms a framework with your favorite Engine (CSS framework).
 
 ## Features
