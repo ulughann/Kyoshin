@@ -84,7 +84,14 @@
     disabled: 24,
   };
 
-  const Media = { sm: 100, md: 200, lg: 300, xl: 400, "2xl": 500, dark: 10 };
+  const Media = {
+    sm: 100,
+    md: 200,
+    lg: 300,
+    xl: 400,
+    "2xl": 500,
+    dark: 10,
+  };
 
   const Order = { first: "-9999", last: "9999", none: "0" };
 
@@ -319,7 +326,7 @@
     v == "transparent" ||
     v == "current";
 
-  function hcolorUtil (col, prop, name) {
+  function hcolorUtil(col, prop, name) {
     let tc = htransCurr(col);
     if (tc) return { [prop]: tc };
     return {
@@ -845,8 +852,7 @@
     }
   };
 
-  let urotate = (p, n) =>
-    htransform({ "--tw-rotate": n.minus + p[1] + "deg" });
+  let urotate = (p, n) => htransform({ "--tw-rotate": n.minus + p[1] + "deg" });
 
   let utranslate = (p, n) =>
     htransform({ ["--tw-translate-" + p[1]]: hspacingPercent(p[2], n) });
@@ -954,7 +960,6 @@
   });
 
   let ulineHeight = (p) => ({ "line-height": LineHeight[p[1]] });
-
 
   const lookup = {
     absolute: uposition,
@@ -1287,7 +1292,13 @@
   let Update = true;
   let Rules = {};
   let GetScreen = () => {
-    return { "sm": "640px", "md": "769px", "lg": "1024px", "xl": "1216px", "2xl": "1408px" }
+    return {
+      sm: "640px",
+      md: "769px",
+      lg: "1024px",
+      xl: "1216px",
+      "2xl": "1408px",
+    };
   };
 
   const MutationConfig = {
@@ -1305,6 +1316,8 @@
 50% { transform: translateY(0); animationTimingFunction: cubic-bezier(0, 0, 0.2, 1); } }
 *,::before,::after {border-width: 0;border-style: solid;}
 *, ::before, ::after {
+--tw-transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+--tw-border-opacity: 1;
 --tw-translate-x: 0;
 --tw-translate-y: 0;
 --tw-rotate: 0;
@@ -1312,35 +1325,33 @@
 --tw-skew-y: 0;
 --tw-scale-x: 1;
 --tw-scale-y: 1;
---tw-transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
---tw-border-opacity: 1;
 border-color: rgba(229, 231, 235, var(--tw-border-opacity));
 --tw-shadow: 0 0 #0000;
+--tw-hue-rotate: var(--tw-empty, );
+--tw-invert: var(--tw-empty, );
 --tw-ring-inset: var(--tw-empty, );
 --tw-ring-offset-width: 0px;
---tw-ring-offset-color: #fff;
+--tw-contrast: var(--tw-empty, );
 --tw-ring-color: rgba(59, 130, 246, 0.5);
 --tw-ring-offset-shadow: 0 0 #0000;
 --tw-ring-shadow: 0 0 #0000;
 --tw-blur: var(--tw-empty, );
 --tw-brightness: var(--tw-empty, );
---tw-contrast: var(--tw-empty, );
+--tw-backdrop-saturate: var(--tw-empty, );
 --tw-grayscale: var(--tw-empty, );
---tw-hue-rotate: var(--tw-empty, );
---tw-invert: var(--tw-empty, );
+--tw-backdrop-grayscale: var(--tw-empty, );
+--tw-ring-offset-color: #fff;
 --tw-saturate: var(--tw-empty, );
---tw-sepia: var(--tw-empty, );
---tw-drop-shadow: var(--tw-empty, );
---tw-filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 --tw-backdrop-blur: var(--tw-empty, );
 --tw-backdrop-brightness: var(--tw-empty, );
 --tw-backdrop-contrast: var(--tw-empty, );
---tw-backdrop-grayscale: var(--tw-empty, );
---tw-backdrop-hue-rotate: var(--tw-empty, );
 --tw-backdrop-invert: var(--tw-empty, );
 --tw-backdrop-opacity: var(--tw-empty, );
---tw-backdrop-saturate: var(--tw-empty, );
+--tw-backdrop-hue-rotate: var(--tw-empty, );
 --tw-backdrop-sepia: var(--tw-empty, );
+--tw-sepia: var(--tw-empty, );
+--tw-drop-shadow: var(--tw-empty, );
+--tw-filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 --tw-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
 }`;
 
@@ -1402,7 +1413,10 @@ border-color: rgba(229, 231, 235, var(--tw-border-opacity));
   let start = () => {
     let body = document.body;
     if (body && body.hasAttribute) {
-      if (body.hasAttribute("kyoshin-prefix") || body.hasAttribute("data-kyoshin-prefix"))
+      if (
+        body.hasAttribute("kyoshin-prefix") ||
+        body.hasAttribute("data-kyoshin-prefix")
+      )
         Prefix = true;
     }
     setScreen(GetScreen());
