@@ -13,13 +13,19 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '20' # Use the desired Node.js version
+        node-version: '14' # Use the desired Node.js version
         
     - name: Install dependencies
       run: npm install
       
+    - name: List files in dist folder (before build)
+      run: ls dist/
+      
     - name: Build
       run: npm run build
+      
+    - name: List files in dist folder (after build)
+      run: ls dist/
       
     - name: Share changes in dist folder
       uses: actions/upload-artifact@v2
