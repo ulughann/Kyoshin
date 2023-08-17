@@ -1,8 +1,7 @@
 ![Logo](LOGO.png)
 
 Kyoshin is not a complete web framework.
-
-If tailwind is a car, Kyoshin is a steering wheel that forms a framework with your favorite Engine (CSS framework).
+If Tailwind is a car, Kyoshin is a steering wheel that forms a car (framework) with your favorite Engine (CSS framework).
 
 ## Features
 - **No build step**: Kyoshin builds your CSS using client-side JavaScript. This means you can use Kyoshin without setting up a complicated build pipeline, just include it as a `<script>` tag in your HTML and get started.
